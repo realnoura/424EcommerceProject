@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width:100%;
+    min-height: 100vh;
+    background-color: #A9A9A9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product{
+    width: 90%;
+    max-width: 750px;
+    display: flex;
+}
+.gallery{
+  flex-basis: 47%; 
+  align-items: center;
+  box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+}
+.gallery img{
+    width: 100%;
+    display: block; 
+    padding-top: 100px; 
+}
+.ditails{
+    flex-basis: 53%;
+    align-items: center;
+    background: #D3D3D3;
+    padding: 40px;
+    padding-left: 60px;
+    box-shadow: -10px 5px 10px 10px rgba(0,0,0,0.1);
+    font-size: 13px;
+    font-weight: 500px;
+    color: #3e2f2f;
+}
+.ditails h2,h3{
+  color: #352626;  
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.product-price{
+    color: #352626;  
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.old-price{
+    text-decoration-line: line-through;
+    text-decoration-color: red;
+  }
+.ditails form{
+     font-size: 15px;
+     font-weight: 400;
+}
+.sizeOption{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+
+}
+.sizeOption p{
+    width: 70px;
+}
+.sizeOption input:checked + span{
+     color:blue ;
+     font-weight: 600;
+}
+.sizeOption input{
+    display: none;
+}
+.sizeOption span{
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.quantityOption{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.quantityOption p{
+    width: 70px;
+}
+.quantityOption input{
+   background: #eee; 
+   border: 0;
+   outline: 0;
+   padding: 2px 2px 2px 15px;
+   width: 50px;
+   border-radius: 12px;
+}
+form button{
+    background: #A9A9A9;
+    color: #fff;
+    font-size: 17px;
+    width: 100%;
+    padding: 10px ;
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+    margin-top: 50px;
+    box-shadow: 0 10px 10px rgba(125, 179, 241, 0.132);
+    cursor: pointer;
+}

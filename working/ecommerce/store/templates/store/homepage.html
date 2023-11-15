@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link  href="{% static 'store/hp.css' %}" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+        })
+    </script>
+    <style>
+            .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            padding: 5px;
+            border: none;
+            border-bottom: 2px solid #009688;
+            outline: none;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.banner {
+    position: relative;
+    min-height: 100vh; 
+    margin-bottom: -60px; 
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{% static 'store/logo.png' %}" alt="It's logo" class="logo">
+            <ul>
+                <li><a href="{% url 'store:homepage' %}">home</a></li>
+                <li><a href="{% url 'User:signup' %}">Sign up</a></li>
+                <li><a href="{% url 'User:login_view' %}">login</a></li>
+                <li><a href="{% url 'store:viewBasket' %}">cart</a></li>
+            </ul>
+            <div class="search-container">
+                <form action="{% url 'store:search' %}" method="post">
+                {% csrf_token%}
+                <input type="text" class="search-input" name="search" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </form>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Loser</h1>
+            <p>Indulge in the thrill of shopping as you browse through our carefully selected pieces, each one a testament to our dedication to fashion excellence.</p>
+            <div>
+                <a href="{% url 'store:products' %}"><button type="button" ><span></span>Shop now</button></a>
+                
+            </div>
+        </div>
+        
+        <div class="prod">
+        <div id="prod1">
+            <a href="{% url 'store:products' %}">
+            <img src="{% static 'store/offer2.png' %}" alt="hoodie">
+            </a>
+        </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="footer">
+            &copy; 2023 Loser. All rights reserved.
+          </div>
+    </div>
+
+    
+
+    {% if show_alert %}
+    <script>
+        
+        alert('Login successful');
+    </script>
+    {% endif %}
+    {% if showalert %}
+    <script>
+        
+        alert('registered successfully');
+    </script>
+    {% endif %}
+    {% if showm %}
+    <script>
+        
+        alert('Added to cart Successfully');
+    </script>
+    {% endif %}
+
+</body>
+</html>

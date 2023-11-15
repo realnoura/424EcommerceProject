@@ -1,0 +1,77 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.429),rgba(0, 0, 0, 0.247)) ,url(log.png);
+    background-size: cover;
+    background-position: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+.signup-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 3px;
+}
+.logo{
+    width: 120px;
+}
+.login-box{
+    width: 360px;
+    height: 280px;
+    margin: auto;
+    background-color: white;
+    border-radius: 3px;
+}
+h1{
+    text-align: center;
+    padding-top: 15px;
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    padding: 7px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+input[type='submit']{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+}
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.para-2{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.para-2 a{
+    color: #49c1a2;
+}
+
+input[type='submit']:hover{
+    background-color:grey;
+}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <link  href="{% static 'User/st.css' %}" rel="stylesheet">
+</head>
+<body>
+    <a href="{% url 'store:homepage' %}"><img src="{% static 'User/logo.png' %}" alt="It's logo" class="logo"></a>
+    <div class="signup-box">
+        <form action="{% url 'User:signup'%}" method="post">
+            {% csrf_token%}
+            <h1>Sign Up</h1>
+            <label>First name</label>
+            <input type="text" placeholder="first name" name="fname" required>
+            <label>username</label>
+            <input type="text" placeholder="username" name="username" required>
+            <label>Email</label>
+            <input type="email" placeholder="email" name="email" required>
+            <label>password</label>
+            <input type="password" placeholder="password" name="password" required>
+            <label>address</label>
+            <input type="text" placeholder="address" name="address" required>
+            <input type="submit" value="submit">
+        </form>
+        <p>
+            By clicking the sign up button , you agree to our <br> <a href="https://www.salla1.net/blog/Terms-and-conditions"> Terms & Conditions</a>
+        </p>
+    </div>
+    <p class="para-2">already have an account? <a href="{% url 'User:login_view' %}">login here</a></p>
+</body>
+</html>

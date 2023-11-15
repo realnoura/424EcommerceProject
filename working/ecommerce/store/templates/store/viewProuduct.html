@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+    <meta name="viewport" content="width=divaic-width, initial-scale=10">
+    <title>view product</title>
+    <link  href="{% static 'store/styleView.css' %}" rel="stylesheet">
+    <style>
+body{
+    background-color: #A9A9A9;
+}
+        .navbar{
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 120px;
+            cursor: pointer;
+        }
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .navbar ul li a{
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        /*ممكن يُزال */
+        .navbar ul li::after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        
+        .navbar ul li:hover::after{
+            width: 100%;
+        }
+        .container {
+    position: relative;
+    min-height: 100vh; 
+    margin-bottom: -60px; 
+}
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+ 
+          </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'store:homepage' %}"><img src="{% static 'store/logo.png' %}" alt="It's logo" class="logo"></a>
+        <ul>
+            <li><a href="{% url 'store:viewBasket' %}">cart</a></li>
+        </ul>
+      </div>
+    <div class="container">
+       <div class="product">
+         <div class="gallery">
+           <img src="{{ product.image.url }}">
+
+         </div>
+    
+    <div class="ditails">
+    <h2>{{product.name}}</h2>
+    {%if product.oldPrice != 0 %}
+    <div class="product-price" ><p><span class="old-price"> {{product.oldPrice}} 
+    </span>  {{ product.price}} </div>
+    {%else%}
+    <h3><small>SR</small> {{product.price}}</h3> 
+    {%endif%}
+    <p>{{product.details}}<br>
+       </p>
+       <form action="{% url 'store:add_to_basket' %}" method="post">
+        {% csrf_token%}
+        <div class="sizeOption">
+            <p>Free Size</p>
+        </div>
+        <input type="hidden" name="pname" value="{{product.id}}">
+        <input type="hidden" name="price" value="{{product.price}}">
+
+
+        <div class="quantityOption">
+            <p>Quantity</p>
+            <input type="number" name="qty" value="1">
+        </div>
+
+        <button>Add to Basket</button>
+       </form>
+ 
+    </div>
+    </div>
+    <div class="footer">
+        &copy; 2023 Loser. All rights reserved.
+    </div>
+    </div>
+
+</body>
+</html>
